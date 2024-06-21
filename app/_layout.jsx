@@ -4,8 +4,8 @@ import { Stack } from "expo-router";
 import { Text } from "react-native";
 import LoginScreen from "./../components/LoginScreen";
 
-
 import * as SecureStore from "expo-secure-store";
+import Toast from "react-native-toast-message";
 
 const tokenCache = {
   async getToken(key) {
@@ -44,6 +44,7 @@ export default function RootLayout() {
         </Stack>
       </SignedIn>
 
+      <Toast />
       <SignedOut>
         <LoginScreen />
       </SignedOut>
